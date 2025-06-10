@@ -1,0 +1,8 @@
+section#cardList {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 30px;
+
+    min-height: 60vh;
+}

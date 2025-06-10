@@ -1,0 +1,28 @@
+header {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    background-color: aquamarine;
+
+    padding: 40px;
+    border-bottom: 1px solid black;
+
+    img {
+        position: absolute;
+        left: 0;
+    }
+    img:focus,
+    img:hover {
+        cursor: pointer;
+    }
+
+    h1 {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    h1:focus,
+    h1:hover {
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,19 @@
+article {
+    height: 300px;
+    width: 200px;
+    
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: 10px;
+    border: solid 2px black;
+    border-radius: 3px;
+
+    img#poster {
+        height: 100px;
+        width: 200px;
+        margin-bottom: 10px;
+    }
+}

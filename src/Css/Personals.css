@@ -1,0 +1,12 @@
+section {
+    img#favorite,
+    img#watched {
+        height: 50px;
+        width: 50px;
+    }
+
+    img:focus,
+    img:hover {
+        cursor: pointer;
+    }
+}
