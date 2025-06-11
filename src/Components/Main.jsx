@@ -22,15 +22,23 @@ const Main = () => {
     // Search content useState and modification function utilized across nav bar and card list
     const [searchContent, setSearchContent] = useState("");
 
-    // TODO searchActive comments
+    // Active search useState and modification function utilized across nav bar and card list
     const [searchActive, setSearchActive] = useState(false);
+
+    // Sort by useState and update function utilized across nav bar and card list
+    const [sortBy, setSortBy] = useState("default")
 
     return (
         <main>
-            <NavBar setData={setData} setSearchContent={setSearchContent} setSearchActive={setSearchActive} setPageNum={setPageNum} />
+            <NavBar setData={setData} setSearchContent={setSearchContent} 
+                setSearchActive={setSearchActive} setPageNum={setPageNum}
+                setSortBy={setSortBy} />
+
             <CardList data={data} setData={setData}
                 searchContent={searchContent} setSearchContent={setSearchContent} 
-                searchActive={searchActive} setSearchActive={setSearchActive} pageNum={pageNum} />
+                searchActive={searchActive} setSearchActive={setSearchActive} 
+                pageNum={pageNum} sortBy={sortBy} />
+
             <LoadMore loadMore={loadMore} />
         </main>
     )

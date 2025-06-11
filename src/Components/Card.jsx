@@ -6,7 +6,6 @@ import Personals from './Personals'
 
 // Css and asset imports
 import '../Css/Card.css'
-import logo from '../assets/TMDBLogo.svg'
 
 // See ./CardList for passing of these parameters
 // TODO Stretch: Implement personals

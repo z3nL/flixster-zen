@@ -8,8 +8,7 @@ import '../Css/LoadMore.css'
 const LoadMore = ({loadMore}) => {
     return (
         <div id='loadMore'>
-            {/* TODO Reflect on onClick syntax in this scenario */}
-            <button onClick={() => {loadMore()}}>
+            <button onClick={() => loadMore()}>
                 Load More
             </button>
         </div>

@@ -10,7 +10,7 @@ import img from '../assets/hamburger.svg'
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
 
-  {/* TODO Reset All fields */}
+  {/* TODO Stretch: Implement returning to home */}
   const returnHome = () => {
     setSidebar(false);
     return <App />;

@@ -1,7 +1,7 @@
 main {
     min-height: 82vh;
     nav {
-        /* TODO Make sticky navbar */
+        /* TODO Stretch: Make sticky navbar */
         position: sticky;
     }
 }   
