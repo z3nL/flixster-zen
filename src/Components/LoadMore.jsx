@@ -4,10 +4,11 @@ import { useState } from 'react'
 // Css and asset imports
 import '../Css/LoadMore.css'
 
-const LoadMore = () => {
+// Sole function is incrementing pageNum for ./CardList to react to it. See ./Main for origin
+const LoadMore = ({loadMore}) => {
     return (
         <div id='loadMore'>
-            <button>
+            <button onClick={() => {loadMore()}}>
                 Load More
             </button>
         </div>

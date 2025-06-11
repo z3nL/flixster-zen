@@ -8,12 +8,13 @@ import Personals from './Personals'
 import '../Css/Card.css'
 import logo from '../assets/TMDBLogo.svg'
 
-const Card = () => {
+// See ./CardList for passing of these parameters
+const Card = ({poster, title, rating}) => {
     return (
         <article>
-            <img id='poster' src={logo} />
-            <h1>Thank you TMDB</h1>
-            <p>⭐ 9.99</p>
+            <img id='poster' src={poster} />
+            <h1>{title}</h1>
+            <p>⭐ {rating}</p>
             <Personals />
         </article>  
     )

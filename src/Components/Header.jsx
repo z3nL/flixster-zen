@@ -1,5 +1,5 @@
 // Functionality and Component imports
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import App from '../App'
 import Sidebar from './Sidebar'
 
@@ -8,7 +8,7 @@ import '../Css/Header.css'
 import img from '../assets/hamburger.svg'
 
 const Header = () => {
-  const [sidebar, setSidebar] = useState(false)
+  const [sidebar, setSidebar] = useState(false);
 
   {/* TODO Reset All fields */}
   const returnHome = () => {
