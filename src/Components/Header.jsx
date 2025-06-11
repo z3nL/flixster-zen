@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <>
     <header>
-        <img src={img} width="100px" onClick={() => setSidebar(!sidebar)} />
+        <img src={img} width="100px" alt='Sidebar icon' onClick={() => setSidebar(!sidebar)} />
         <h1 onClick={returnHome}>Flixster 🎥</h1>
     </header>
 

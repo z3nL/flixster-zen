@@ -7,7 +7,7 @@ import Card from './Card'
 // Css and asset imports
 import '../Css/CardList.css'
 
-const CardList = ({data, setData, searchContent, searchActive, setSearchActive, pageNum, sortBy}) => {
+const CardList = ({data, setData, searchContent, searchActive, setSearchActive, pageNum, sortBy, setModal}) => {
 
     // TODO fetchData.js is deprecated and housed in this useEffect until a solution is found
     // Tracks if the current TMDB Now Playing page # changes and appends more movie cards as such
@@ -90,7 +90,8 @@ const CardList = ({data, setData, searchContent, searchActive, setSearchActive, 
                     return (
                         // Condense movie title if it's longer than 27 characters, round vote averages to 2 decimal places
                         <Card key={movie.id} poster={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} 
-                        title={condense(movie.title)} rating={parseFloat(movie.vote_average).toFixed(2)} />
+                        title={condense(movie.title)} rating={parseFloat(movie.vote_average).toFixed(2)}
+                        setModal={setModal} />
                     )
                 })
             }

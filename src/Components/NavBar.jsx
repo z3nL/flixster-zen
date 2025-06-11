@@ -35,6 +35,7 @@ const NavBar = ({setData, setSearchContent, setSearchActive, setPageNum, setSort
     setPageNum(1);
   }
 
+  // TODO Note: consider that sorting incoming data only worked outside of useEffects, etc. consider this for clearing?
   return (
     <nav>
       {/* Search bar, clear leverages same onClick by just setting search content to empty string */}

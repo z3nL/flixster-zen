@@ -10,7 +10,7 @@ const Footer = () => {
     <footer>
         <h3>Zen L // CodePath2025</h3>
         <a href='https://www.themoviedb.org/'>
-          <img src={tmdb} />
+          <img src={tmdb} alt='TMDB logo'/>
         </a>
     </footer>
   )
