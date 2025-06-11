@@ -9,6 +9,7 @@ import '../Css/Card.css'
 import logo from '../assets/TMDBLogo.svg'
 
 // See ./CardList for passing of these parameters
+// TODO Stretch: Implement personals
 const Card = ({poster, title, rating}) => {
     return (
         <article>

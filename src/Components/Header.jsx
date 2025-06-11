@@ -24,7 +24,7 @@ const Header = () => {
         <h1 onClick={returnHome}>Flixster 🎥</h1>
     </header>
 
-    {/* TODO Implement sidebar after MVP is complete { sidebar && <Sidebar />} */}
+    {/* TODO Stretch: Implement sidebar after MVP is complete { sidebar && <Sidebar />} */}
     </>
   )
 }
