@@ -12,7 +12,6 @@ const Header = () => {
 
   {/* TODO Reset All fields */}
   const returnHome = () => {
-    console.log("return home");
     setSidebar(false);
     return <App />;
   }
