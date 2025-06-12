@@ -5,6 +5,14 @@ import { useState } from 'react'
 import '../Css/NavBar.css'
 
 const NavBar = ({setData, setSearchContent, setSearchActive, setPageNum, setSortBy}) => {
+  
+  // Helper function to modify search-related states
+  const submitQuery = (query) => {
+    // set searchActive to false to confirm we're inputing a new query; this is changed to true in ./CardList
+    setSearchActive(false);
+    setSearchContent(query);
+    setPageNum(1);
+  }
 
   // Responds to submit button; sends the text content of the input box up to Main
   const handleSearch = (event) => {
@@ -13,20 +21,15 @@ const NavBar = ({setData, setSearchContent, setSearchActive, setPageNum, setSort
     // The first element (index 0) of the form is the input box
     const inputField = event.target[0];
 
-    // TODO Core low prio: Fix blank search
+    // TODO Note: Is this necessary/even does anything?
     const query = inputField.value ? inputField.value : "";
     event.target.reset();
 
     // TODO Stretch: Implement placeholder changes
-    //inputField.placeholder="Displaying results...";
 
-    // set searchActive to false to confirm we're inputing a new query; this is changed to true in ./CardList
-    setSearchActive(false);
-    setSearchContent(query);
-    setPageNum(1);
+    submitQuery(query);
   }
 
-  // TODO Core low prio: Fix clear
   // Responds to clear button; empty/reset associated card list data to set display back to NP page 1
   const handleClear = () => {
     setData([]);
