@@ -3,6 +3,10 @@ function sortData(data, sortBy) {
     return ([ ...data.sort((a,b) => 
         {
             switch (sortBy) {
+                case 'default':
+                case 'popularity':
+                    return(b.popularity - a.popularity);
+
                 case 'alpha':
                     return (a.title.localeCompare(b.title));
                     
@@ -13,7 +17,8 @@ function sortData(data, sortBy) {
                     return (b.vote_average - a.vote_average);
                 
                 default:
-                    console.log("sortData error: invalid sortBy argument");
+                    console.error("sortData error: invalid sortBy argument");
+                    return 0;
             }
         })
     ]);

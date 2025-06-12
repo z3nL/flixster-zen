@@ -1,5 +1,4 @@
 // Functionality and Component imports
-import { useState } from 'react'
 
 // Css and asset imports
 import '../Css/Footer.css'

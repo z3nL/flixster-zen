@@ -1,5 +1,5 @@
 // Functionality and Component imports
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import NavBar from './NavBar'
 import CardList from './CardList'
 import LoadMore from './LoadMore'
@@ -35,16 +35,25 @@ const Main = () => {
 
     return (
         <main>
-            <Modal modal={modal} setModal={setModal} />
+            <Modal 
+                modal={modal} setModal={setModal} 
+            />
 
-            <NavBar setData={setData} setSearchContent={setSearchContent} 
-                setSearchActive={setSearchActive} setPageNum={setPageNum}
-                setSortBy={setSortBy} />
+            <NavBar 
+                setSearchContent={setSearchContent} 
+                setSearchActive={setSearchActive} 
+                pageNum={pageNum} setPageNum={setPageNum}
+                setSortBy={setSortBy} 
+            />
 
-            <CardList data={data} setData={setData}
+            <CardList 
+                data={data} setData={setData}
                 searchContent={searchContent} setSearchContent={setSearchContent} 
                 searchActive={searchActive} setSearchActive={setSearchActive} 
-                pageNum={pageNum} sortBy={sortBy} modal={modal} setModal={setModal} />
+                pageNum={pageNum} 
+                sortBy={sortBy} 
+                setModal={setModal} 
+            />
 
             <LoadMore loadMore={loadMore} />
         </main>

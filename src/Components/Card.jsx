@@ -8,9 +8,10 @@ import Personals from './Personals'
 // Css and asset imports
 import '../Css/Card.css'
 
-// See ./CardList for passing of these parameters
 // TODO Stretch: Implement personals
-const Card = ({movieID, poster, title, rating, setModal}) => {
+
+// See ./CardList to reference inheritance of these props
+const Card = ({movieID, poster, cardTitle, fullTitle, rating, setModal}) => {
 
     // Local useState that tracks fetched movie details
     const [movieDetails, setMovieDetails] = useState([]);
@@ -29,7 +30,7 @@ const Card = ({movieID, poster, title, rating, setModal}) => {
 
     // Create modalInfo object that the modal will use to display movie information
     const modalInfo = {
-        "title" : title,
+        "title" : fullTitle,
         "backdrop" : movieDetails.backdrop_path,
         "releaseDate" : movieDetails.release_date,
         "rating" : rating,
@@ -40,8 +41,8 @@ const Card = ({movieID, poster, title, rating, setModal}) => {
 
     return (
         <article className='card'>
-            <img id='poster' onClick={() => setModal([true, modalInfo])} src={poster} alt={`Poster for the movie ${title}`} />
-            <h1 onClick={() => setModal([true, modalInfo])}>{title}</h1>
+            <img id='poster' onClick={() => setModal([true, modalInfo])} src={poster} alt={`Poster for the movie ${fullTitle}`} />
+            <h1 onClick={() => setModal([true, modalInfo])}>{cardTitle}</h1>
             <p>⭐ {rating}</p>
             <Personals />
         </article>  

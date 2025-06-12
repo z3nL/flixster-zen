@@ -1,10 +1,9 @@
 // Functionality and Component imports
-import { useState } from 'react'
 
 // Css and asset imports
 import '../Css/LoadMore.css'
 
-// Sole function is incrementing pageNum for ./CardList to react to it. See ./Main for origin
+// Sole function is incrementing pageNum to trigger corresponding useEffect in ./CardList
 const LoadMore = ({loadMore}) => {
     return (
         <div id='loadMore'>

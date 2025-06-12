@@ -2,10 +2,12 @@
 import '../Css/Modal.css'
 import dooricon from '../assets/dooricon.svg'
 
-const Main = ({modal, setModal}) => {
+// See ./Main for inheritance of these props
+const Modal = ({modal, setModal}) => {
     if (!modal[0])
         return null;
 
+    // modal is an array of [Boolean, Object]; we use modal[1] to ref. the info object
     const info = modal[1];
     const imgURL = `https://image.tmdb.org/t/p/w500${info.backdrop}`;
 
@@ -26,4 +28,4 @@ const Main = ({modal, setModal}) => {
         </section>
     )
 }
-export default Main;
+export default Modal;

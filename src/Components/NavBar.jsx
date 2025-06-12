@@ -1,10 +1,9 @@
 // Functionality and Component imports
-import { useState } from 'react'
 
 // Css and asset imports
 import '../Css/NavBar.css'
 
-const NavBar = ({setData, setSearchContent, setSearchActive, setPageNum, setSortBy}) => {
+const NavBar = ({setSearchContent, setSearchActive, pageNum, setPageNum, setSortBy}) => {
   
   // Helper function to modify search-related states
   const submitQuery = (query) => {
@@ -21,39 +20,37 @@ const NavBar = ({setData, setSearchContent, setSearchActive, setPageNum, setSort
     // The first element (index 0) of the form is the input box
     const inputField = event.target[0];
 
-    // TODO Note: Is this necessary/even does anything?
+    // Handle undefined behavior when search is hit w/o inputting text
     const query = inputField.value ? inputField.value : "";
+
     event.target.reset();
-
-    // TODO Stretch: Implement placeholder changes
-
     submitQuery(query);
   }
 
-  // Responds to clear button; empty/reset associated card list data to set display back to NP page 1
+  // Responds to clear button; if we're not already on NP page 1, states will be updated to make it so
   const handleClear = () => {
-    setData([]);
-    setSearchContent("");
+    setSortBy('default');
     setSearchActive(false);
+    setSearchContent("");
     setPageNum(1);
   }
 
-  // TODO Note: consider that sorting incoming data only worked outside of useEffects, etc. consider this for clearing?
   return (
     <nav>
       {/* Search bar, clear leverages same onClick by just setting search content to empty string */}
       <form id='search' onSubmit={(event) => handleSearch(event)}>
         <input id='searchContent' placeholder='Look up a movie!' />
         <button type='submit'>Search</button>
-        <button type='clear' onClick={() => handleClear()}>Clear</button>
+        <button type='clear' onClick={() => handleClear()}>Now Playing (Clear)</button>
       </form>
 
       {/* Sort dropdown, changing sort type updates sortBy to be used in ./CardList */}
-      <select id='sort' onChange={(event) => setSortBy(event.target.value)}>
+      <select id='sort' onChange={(event) => {setSortBy(event.target.value); event.target.value='default'}}>
         <option value='default'>Sort by</option>
         <option value='alpha'>A to Z</option>
         <option value='date'>Release Date (Desc.)</option>
         <option value='rating'>Rating (Desc.)</option>
+        <option value='popularity'>Popularity (Desc.)</option>
       </select>
 
     </nav>

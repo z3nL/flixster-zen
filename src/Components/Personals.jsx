@@ -1,3 +1,6 @@
+// If you are reading this, then this hasn't been implemented as a stretch feature yet
+// It is currently a static visual element
+
 // Functionality and Component imports
 import { useState } from 'react'
 
