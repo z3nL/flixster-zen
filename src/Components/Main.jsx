@@ -78,7 +78,7 @@ const Main = ({sidebar}) => {
                     cache={cache} setCache={setCache}
                 />
 
-                <LoadMore loadMore={loadMore} viewSaved={viewSaved} />
+                <LoadMore loadMore={loadMore} viewSaved={viewSaved} setViewSaved={setViewSaved} />
             </section>
         </main>
     )
