@@ -24,9 +24,12 @@ const Modal = ({modal, setModal}) => {
                 </section>
                 <p className='miscInfo'> <b>Overview: </b>{info.overview} </p>
                 <p className='miscInfo'> <b>Genres: </b>{info.genres} </p>
-                <iframe className='trailer'
-                    src={`https://www.youtube.com/embed/${info.embedKey}`}>
-                </iframe>
+                {info.embedKey &&
+                    // Only provide a video embed if one was found
+                    <iframe className='trailer'
+                        src={`https://www.youtube.com/embed/${info.embedKey}`}>
+                    </iframe>
+                }
                 <br></br>
                 <img id='dooricon' src={dooricon} onClick={() => setModal([false, {}])} />
             </div>

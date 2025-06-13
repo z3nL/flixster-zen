@@ -35,9 +35,10 @@ const Card = ({movieID, poster, cardTitle, fullTitle, rating, setModal}) => {
         fetch(`https://api.themoviedb.org/3/movie/${movieID}/videos?language=en-US`, optionsForFetch)
             .then(res => res.json())
             .then((videos) => {
-                // Videos contains array of results with video info
+                // videos contains array results with video info (if there are any)
                 // Indiscriminately grab the embed key of the first one
-                setEmbedKey(videos.results[0].key)
+                const vids = videos.results;
+                setEmbedKey(vids ? vids[0].key : "")
             })
     }, []);
 

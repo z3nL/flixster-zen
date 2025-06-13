@@ -26,10 +26,11 @@ article.card {
 article.card:hover {
     cursor: pointer;
     justify-content: center;
-    height: 450px;
-    width: 250px;
+    height: 425px;
+    width: 210px;
 
     img#poster {
-        border: 1px solid rgb(94, 234, 234);
+        border: 1px solid rgb(56, 140, 140);
+        border-radius: 3px;
     }
 }
