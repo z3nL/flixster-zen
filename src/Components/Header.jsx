@@ -1,8 +1,6 @@
 // Functionality and Component imports
 import { useState } from 'react'
 
-// If you are reading this, then these haven't been implemented as stretch features yet
-// They are currently inactive
 import App from '../App'
 import Sidebar from './Sidebar'
 
@@ -10,8 +8,7 @@ import Sidebar from './Sidebar'
 import '../Css/Header.css'
 import img from '../assets/hamburger.svg'
 
-const Header = () => {
-  const [sidebar, setSidebar] = useState(false);
+const Header = ({sidebar, setSidebar}) => {
 
   {/* TODO Stretch: Implement returning to home */}
   const returnHome = () => {

@@ -1,7 +1,12 @@
 main {
+    display: flex;
+    flex-direction: row;
     min-height: 82vh;
+    
     nav {
         /* TODO Stretch: Make sticky navbar */
         position: sticky;
     }
+    
+    border-bottom: 1px solid black;
 }   

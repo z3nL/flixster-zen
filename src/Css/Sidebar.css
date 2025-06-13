@@ -1,0 +1,7 @@
+.sidebar {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    gap: 60px;
+    border-right: 1px solid black;
+}

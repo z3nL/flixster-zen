@@ -1,16 +1,12 @@
-// If you are reading this, then this hasn't been implemented as a stretch feature yet
-// It is currently inactive
-
 // Functionality and Component imports
 import { useState } from 'react'
 
 // Css and asset imports
-// TODO remove this comment if no addtl imports are made
+import '../Css/Sidebar.css'
 
 const Sidebar = () => {
     return (
-        <section>
-            <buton>Home</buton>
+        <section className='sidebar'>
             <button>Watched</button>
             <button>Liked</button>
         </section>

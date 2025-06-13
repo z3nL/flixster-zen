@@ -4,12 +4,13 @@ import NavBar from './NavBar'
 import CardList from './CardList'
 import LoadMore from './LoadMore'
 import Modal from './Modal'
+import Sidebar from './Sidebar'
 
 // Css and asset imports
 import '../Css/Main.css'
 
 // "Main" functionality of web-app, inclusive of the nav bar, movie cards, and Load More button
-const Main = () => {
+const Main = ({sidebar}) => {
 
     // Data to display movie cards
     const [data, setData] = useState([]);
@@ -39,23 +40,27 @@ const Main = () => {
                 modal={modal} setModal={setModal} 
             />
 
-            <NavBar 
-                setSearchContent={setSearchContent} 
-                setSearchActive={setSearchActive} 
-                pageNum={pageNum} setPageNum={setPageNum}
-                setSortBy={setSortBy} 
-            />
+            {sidebar && <Sidebar />}
 
-            <CardList 
-                data={data} setData={setData}
-                searchContent={searchContent} setSearchContent={setSearchContent} 
-                searchActive={searchActive} setSearchActive={setSearchActive} 
-                pageNum={pageNum} 
-                sortBy={sortBy} 
-                setModal={setModal} 
-            />
+            <section className='primary'>
+                <NavBar 
+                    setSearchContent={setSearchContent} 
+                    setSearchActive={setSearchActive} 
+                    pageNum={pageNum} setPageNum={setPageNum}
+                    setSortBy={setSortBy} 
+                />
 
-            <LoadMore loadMore={loadMore} />
+                <CardList 
+                    data={data} setData={setData}
+                    searchContent={searchContent} setSearchContent={setSearchContent} 
+                    searchActive={searchActive} setSearchActive={setSearchActive} 
+                    pageNum={pageNum} 
+                    sortBy={sortBy} 
+                    setModal={setModal} 
+                />
+
+                <LoadMore loadMore={loadMore} />
+            </section>
         </main>
     )
 }

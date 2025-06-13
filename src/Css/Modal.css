@@ -53,3 +53,6 @@ img#backdrop {
 img#dooricon {
     height: 50px;
 }
+img#dooricon:hover {
+    cursor: pointer;
+}

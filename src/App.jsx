@@ -5,10 +5,12 @@ import Main from './Components/Main.jsx';
 import Footer from './Components/Footer.jsx'
 
 const App = () => {
+  const [sidebar, setSidebar] = useState(false);
+
   return (
     <div className="App">
-      <Header />
-      <Main />
+      <Header sidebar={sidebar} setSidebar={setSidebar} />
+      <Main sidebar={sidebar} />
       <Footer />
     </div>
   )
