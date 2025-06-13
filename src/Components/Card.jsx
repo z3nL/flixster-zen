@@ -6,10 +6,10 @@ import saveMovie from '../Utils/saveMovie'
 // Css and asset imports
 import '../Css/Card.css'
 import '../Css/Personals.css'
-import emptyheart from './emptyheart.png'
-import shuteye from './shuteye.png'
-import fullheart from './fullheart.png'
-import openeye from './openeye.svg'
+import emptyheart from '/src/assets/emptyheart.png'
+import shuteye from '/src/assets/shuteye.png'
+import fullheart from '/src/assets/fullheart.png'
+import openeye from '/src/assets/openeye.svg'
 
 
 // See ./CardList to reference inheritance of these props
@@ -18,12 +18,6 @@ const Card =
         movieID, poster, cardTitle, fullTitle, rating, setModal, 
         liked, setLiked, watched, setWatched
     }) => {
-    
-    // Query GitHub for the icon assets; why don't the original filepaths work?
-    // const emptyheart = 'https://raw.githubusercontent.com/z3nL/flixster-zen/refs/heads/main/src/assets/hearticon.png';
-    // const shuteye = 'https://raw.githubusercontent.com/z3nL/flixster-zen/refs/heads/main/src/assets/shuteye.png';
-    // const fullheart = 'https://raw.githubusercontent.com/z3nL/flixster-zen/refs/heads/main/src/assets/fullheart.png';
-    // const openeye = 'https://raw.githubusercontent.com/z3nL/flixster-zen/refs/heads/main/src/assets/openeye.svg';
 
     // Local useState that tracks fetched movie details
     const [movieDetails, setMovieDetails] = useState([]);
@@ -74,11 +68,13 @@ const Card =
             <section className='Personals'>
                 <img 
                     id='favorite' src={liked.includes(movieID) ? fullheart : emptyheart} 
-                    onClick={(event) => saveMovie(event, movieID, liked, setLiked, watched, setWatched)} 
+                    onClick={(event) => saveMovie(event, (liked.includes(movieID) ? "unlike" : "like"),
+                                                    movieID, liked, setLiked, watched, setWatched)} 
                 />
                 <img 
                     id='watched' src={watched.includes(movieID) ? openeye : shuteye} 
-                    onClick={(event) => saveMovie(event, movieID, liked, setLiked, watched, setWatched)} 
+                    onClick={(event) => saveMovie(event, (watched.includes(movieID) ? "unwatch" : "watch"), 
+                                                    movieID, liked, setLiked, watched, setWatched)} 
                 />
             </section>
         </article>  
