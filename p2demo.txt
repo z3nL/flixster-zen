@@ -1,0 +1,16 @@
+hover the header and show the first webAIM tab 
+scroll all the way down
+hit loadmore once and show
+search hello hit enter
+search avengers click search
+clear
+toggle a modal
+hover the modal and show second webAIM tab
+show video embed
+close modal
+demo each sort option up to popularity
+clear
+like watched like watched watched+like
+show liked
+show watched
+show home

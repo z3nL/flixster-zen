@@ -12,7 +12,6 @@ main {
 
     .primary {
         justify-content: center;
-        align-content: center;
 
         #cardList {
             min-width: 167vh;
