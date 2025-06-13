@@ -1,4 +1,4 @@
-section {
+.Personals {
     img#favorite,
     img#watched {
         height: 30px;
@@ -9,4 +9,10 @@ section {
     img:hover {
         cursor: pointer;
     }
+
+    transition: 0.3s;
+}
+.Personals:hover {
+    border: 1px solid rgb(94, 234, 234);
+    border-radius: 3px;
 }

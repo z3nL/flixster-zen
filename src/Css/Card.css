@@ -10,20 +10,21 @@ article.card {
     border: solid 2px black;
     border-radius: 3px;
 
-    h1 {
+    .title {
         margin: 10px 0 3px 0;
     }
-    h1:hover {
+    .title:hover {
         cursor: pointer;
     }
 
-    p {
+    .rating {
         margin: 0 0 3px 0;
     }
 
     transition: 0.5s;
 }
-article:hover {
+article.card:hover {
+    cursor: pointer;
     justify-content: center;
     height: 450px;
     width: 250px;

@@ -21,8 +21,8 @@ const Header = () => {
   return (
     <>
     <header>
-        <img src={img} width="100px" alt='Sidebar icon' onClick={() => setSidebar(!sidebar)} />
-        <h1 onClick={returnHome}>Flixster 🎥</h1>
+        <img id='sideIcon' src={img} width="100px" alt='Sidebar icon' onClick={() => setSidebar(!sidebar)} />
+        <h1 id='logo' onClick={returnHome}>Flixster 🎥</h1>
     </header>
 
     {/* TODO Stretch: Implement sidebar after MVP is complete */}

@@ -7,22 +7,22 @@ header {
     padding: 40px;
     border-bottom: 1px solid black;
 
-    img {
+    #sideIcon {
         position: absolute;
         left: 0;
     }
-    img:focus,
-    img:hover {
+    sideIcon:focus,
+    sideIcon:hover {
         cursor: pointer;
     }
 
-    h1 {
+    #logo {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
     }
-    h1:focus,
-    h1:hover {
+    #logo:focus,
+    #logo:hover {
         cursor: pointer;
     }
 }

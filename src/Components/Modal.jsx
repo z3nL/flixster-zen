@@ -12,8 +12,9 @@ const Modal = ({modal, setModal}) => {
     const imgURL = `https://image.tmdb.org/t/p/w500${info.backdrop}`;
 
     return (
-        <section id='modal'>
-            <div className='content'>
+        // Clicking anywhere outside of the content box closes the modal
+        <section id='modal' onClick={() => setModal([false, {}])}>
+            <div className='content' onClick={(event) => event.stopPropagation()}>
                 <h1 className='movieTitle'>{info.title}</h1>
                 <img id='backdrop' src={imgURL} alt={`Backdrop for ${info.title}`}></img>
                 <section className='technicalInfo'>
@@ -23,6 +24,10 @@ const Modal = ({modal, setModal}) => {
                 </section>
                 <p className='miscInfo'> <b>Overview: </b>{info.overview} </p>
                 <p className='miscInfo'> <b>Genres: </b>{info.genres} </p>
+                <iframe className='trailer'
+                    src={`https://www.youtube.com/embed/${info.embedKey}`}>
+                </iframe>
+                <br></br>
                 <img id='dooricon' src={dooricon} onClick={() => setModal([false, {}])} />
             </div>
         </section>
