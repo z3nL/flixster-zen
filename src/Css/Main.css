@@ -4,11 +4,20 @@ main {
         display: flex;
         flex-direction: row;
     }
-    min-height: 82vh;
+    min-height: 86vh;
 
     nav {
         /* TODO Stretch: Make sticky navbar */
         position: sticky;
+    }
+
+    .primary {
+        justify-content: center;
+        align-content: center;
+
+        #cardList {
+            min-width: 167vh;
+        }
     }
     
     border-bottom: 1px solid black;
