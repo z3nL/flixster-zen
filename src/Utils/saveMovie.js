@@ -1,5 +1,5 @@
 // Css and asset imports
-import emptyheart from '../Components/hearticon.png'
+import emptyheart from '../Components/emptyheart.png'
 import shuteye from '../Components/shuteye.png'
 import fullheart from '../Components/fullheart.png'
 import openeye from '../Components/openeye.svg'
@@ -10,7 +10,7 @@ const saveMovie = (event, movieID, liked, setLiked, watched, setWatched ) => {
     const target = event.target;
     const source = target.src.split("Components/")[1];
 
-    const empty_heart = 'hearticon.png';
+    const empty_heart = 'emptyheart.png';
     const full_heart = fullheart.split("Components/")[1];
     const shut_eye = 'shuteye.png';
     const open_eye = openeye.split("Components/")[1];

@@ -6,7 +6,7 @@ import saveMovie from '../Utils/saveMovie'
 // Css and asset imports
 import '../Css/Card.css'
 import '../Css/Personals.css'
-import emptyheart from './hearticon.png'
+import emptyheart from './emptyheart.png'
 import shuteye from './shuteye.png'
 import fullheart from './fullheart.png'
 import openeye from './openeye.svg'
