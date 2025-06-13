@@ -6,10 +6,6 @@ import saveMovie from '../Utils/saveMovie'
 // Css and asset imports
 import '../Css/Card.css'
 import '../Css/Personals.css'
-import emptyheart from '/src/assets/hearticon.png'
-import shuteye from '/src/assets/shuteye.png'
-import fullheart from '/src/assets/fullheart.png'
-import openeye from '/src/assets/openeye.svg'
 
 
 // See ./CardList to reference inheritance of these props
@@ -18,6 +14,12 @@ const Card =
         movieID, poster, cardTitle, fullTitle, rating, setModal, 
         liked, setLiked, watched, setWatched
     }) => {
+    
+    // Query GitHub for the icon assets; why don't the original filepaths work?
+    const emptyheart = 'https://raw.githubusercontent.com/z3nL/flixster-zen/refs/heads/main/src/assets/hearticon.png';
+    const shuteye = 'https://raw.githubusercontent.com/z3nL/flixster-zen/refs/heads/main/src/assets/shuteye.png';
+    const fullheart = 'https://raw.githubusercontent.com/z3nL/flixster-zen/refs/heads/main/src/assets/fullheart.png';
+    const openeye = 'https://raw.githubusercontent.com/z3nL/flixster-zen/refs/heads/main/src/assets/openeye.svg';
 
     // Local useState that tracks fetched movie details
     const [movieDetails, setMovieDetails] = useState([]);
