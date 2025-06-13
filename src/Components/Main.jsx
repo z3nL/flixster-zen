@@ -63,6 +63,7 @@ const Main = ({sidebar}) => {
                     setSearchActive={setSearchActive} 
                     setPageNum={setPageNum}
                     setSortBy={setSortBy}
+                    viewSaved={viewSaved}
                 />
 
                 <CardList 

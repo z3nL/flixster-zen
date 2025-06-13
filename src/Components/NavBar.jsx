@@ -4,7 +4,7 @@
 import '../Css/NavBar.css'
 
 // Props inherited from ./Main
-const NavBar = ({setSearchContent, setSearchActive, setPageNum, setSortBy}) => {
+const NavBar = ({setSearchContent, setSearchActive, setPageNum, setSortBy, viewSaved}) => {
   
   // Helper function to modify search-related states
   const submitQuery = (query) => {
@@ -37,23 +37,28 @@ const NavBar = ({setSearchContent, setSearchActive, setPageNum, setSortBy}) => {
   }
 
   return (
-    <nav>
-      {/* Search bar, clear leverages same onClick by just setting search content to empty string */}
-      <form id='search' onSubmit={(event) => handleSearch(event)}>
-        <input id='searchContent' placeholder='Look up a movie!' />
-        <button type='submit'>Search</button>
-        <button type='clear' onClick={() => handleClear()}>Now Playing (Clear)</button>
-      </form>
+    <>
+    {/* Arr viewSaved: first value in array toggles liked movies, second toggles watched movies */}
+    { !viewSaved[0] && !viewSaved[1] &&
+      <nav>
+        {/* Search bar, clear leverages same onClick by just setting search content to empty string */}
+        <form id='search' onSubmit={(event) => handleSearch(event)}>
+          <input id='searchContent' placeholder='Look up a movie!' />
+          <button type='submit'>Search</button>
+          <button type='clear' onClick={() => handleClear()}>Now Playing (Clear)</button>
+        </form>
 
-      {/* Sort dropdown, changing sort type updates sortBy to be used in ./CardList */}
-      <select id='sort' onChange={(event) => {setSortBy(event.target.value); event.target.value='default'}}>
-        <option value='default'>Sort by</option>
-        <option value='alpha'>A to Z</option>
-        <option value='date'>Release Date (Desc.)</option>
-        <option value='rating'>Rating (Desc.)</option>
-        <option value='popularity'>Popularity (Desc.)</option>
-      </select>
-    </nav>
+        {/* Sort dropdown, changing sort type updates sortBy to be used in ./CardList */}
+        <select id='sort' onChange={(event) => {setSortBy(event.target.value); event.target.value='default'}}>
+          <option value='default'>Sort by</option>
+          <option value='alpha'>A to Z</option>
+          <option value='date'>Release Date (Desc.)</option>
+          <option value='rating'>Rating (Desc.)</option>
+          <option value='popularity'>Popularity (Desc.)</option>
+        </select>
+      </nav>
+    }
+    </>
   )
 }
 
