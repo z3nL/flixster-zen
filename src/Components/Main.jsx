@@ -34,20 +34,35 @@ const Main = ({sidebar}) => {
     // contains array holding a Boolean tracking modal status and object containing modal info to display
     const [modal, setModal] = useState([false, {}]);
 
+    // useStates that track if card list view should switch to saved content
+    // contains array of Booleans: first value toggles liked movies, second toggles watched movies
+    const [viewSaved, setViewSaved] = useState([false, false])
+
+    // useStates that store saved content to be referenced in card list view when needed
+    // contains array of movie IDs to check inclusion
+    const [liked, setLiked] = useState([]);
+    const [watched, setWatched] = useState([]);
+
+
+    // useState to cache existing data before a sidebar click occurred
+    const [cache, setCache] = useState([]);
+
     return (
         <main>
             <Modal 
                 modal={modal} setModal={setModal} 
             />
 
-            {sidebar && <Sidebar />}
+            {sidebar && 
+                <Sidebar setViewSaved={setViewSaved} />
+            }
 
             <section className='primary'>
                 <NavBar 
                     setSearchContent={setSearchContent} 
                     setSearchActive={setSearchActive} 
-                    pageNum={pageNum} setPageNum={setPageNum}
-                    setSortBy={setSortBy} 
+                    setPageNum={setPageNum}
+                    setSortBy={setSortBy}
                 />
 
                 <CardList 
@@ -57,9 +72,13 @@ const Main = ({sidebar}) => {
                     pageNum={pageNum} 
                     sortBy={sortBy} 
                     setModal={setModal} 
+                    viewSaved={viewSaved} setViewSaved={setViewSaved}
+                    liked={liked} setLiked={setLiked}
+                    watched={watched} setWatched={setWatched}
+                    cache={cache} setCache={setCache}
                 />
 
-                <LoadMore loadMore={loadMore} />
+                <LoadMore loadMore={loadMore} viewSaved={viewSaved} />
             </section>
         </main>
     )

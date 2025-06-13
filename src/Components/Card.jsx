@@ -1,17 +1,23 @@
 // Functionality and Component imports
 import { useEffect, useState } from 'react'
 import optionsForFetch from '../Utils/optionsForFetch'
-
-// Component imports
-import Personals from './Personals'
+import saveMovie from '../Utils/saveMovie'
 
 // Css and asset imports
 import '../Css/Card.css'
+import '../Css/Personals.css'
+import emptyheart from '../assets/hearticon.png'
+import shuteye from '../assets/shuteye.png'
+import fullheart from '../assets/fullheart.png'
+import openeye from '../assets/openeye.svg'
 
-// TODO Stretch: Implement personals
 
 // See ./CardList to reference inheritance of these props
-const Card = ({movieID, poster, cardTitle, fullTitle, rating, setModal}) => {
+const Card = 
+    ({
+        movieID, poster, cardTitle, fullTitle, rating, setModal, 
+        liked, setLiked, watched, setWatched
+    }) => {
 
     // Local useState that tracks fetched movie details
     const [movieDetails, setMovieDetails] = useState([]);
@@ -59,7 +65,16 @@ const Card = ({movieID, poster, cardTitle, fullTitle, rating, setModal}) => {
             <img id='poster' src={poster} alt={`Poster for the movie ${fullTitle}`} />
             <h1 className='title'>{cardTitle}</h1>
             <p className='rating'>⭐ {rating}</p>
-            <Personals />
+            <section className='Personals'>
+                <img 
+                    id='favorite' src={liked.includes(movieID) ? fullheart : emptyheart} 
+                    onClick={(event) => saveMovie(event, movieID, liked, setLiked, watched, setWatched)} 
+                />
+                <img 
+                    id='watched' src={watched.includes(movieID) ? openeye : shuteye} 
+                    onClick={(event) => saveMovie(event, movieID, liked, setLiked, watched, setWatched)} 
+                />
+            </section>
         </article>  
     )
 }

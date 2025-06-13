@@ -3,7 +3,8 @@
 // Css and asset imports
 import '../Css/NavBar.css'
 
-const NavBar = ({setSearchContent, setSearchActive, pageNum, setPageNum, setSortBy}) => {
+// Props inherited from ./Main
+const NavBar = ({setSearchContent, setSearchActive, setPageNum, setSortBy}) => {
   
   // Helper function to modify search-related states
   const submitQuery = (query) => {
@@ -52,7 +53,6 @@ const NavBar = ({setSearchContent, setSearchActive, pageNum, setPageNum, setSort
         <option value='rating'>Rating (Desc.)</option>
         <option value='popularity'>Popularity (Desc.)</option>
       </select>
-
     </nav>
   )
 }
