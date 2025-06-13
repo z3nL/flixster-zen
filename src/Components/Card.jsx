@@ -6,10 +6,10 @@ import saveMovie from '../Utils/saveMovie'
 // Css and asset imports
 import '../Css/Card.css'
 import '../Css/Personals.css'
-import emptyheart from '../assets/hearticon.png'
-import shuteye from '../assets/shuteye.png'
-import fullheart from '../assets/fullheart.png'
-import openeye from '../assets/openeye.svg'
+import emptyheart from '/src/assets/hearticon.png'
+import shuteye from '/src/assets/shuteye.png'
+import fullheart from '/src/assets/fullheart.png'
+import openeye from '/src/assets/openeye.svg'
 
 
 // See ./CardList to reference inheritance of these props
