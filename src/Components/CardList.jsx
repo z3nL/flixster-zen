@@ -100,7 +100,7 @@ const CardList =
         if (viewLiked) return `Favorites`;
         else if (viewWatched) return `Watched`;
         else
-            return searchContent ? `Showing results for "${searchContent}"` : `Now Playing${sortingReference[sortBy]}`
+            return searchContent ? `Showing results for "${searchContent}"${sortingReference[sortBy]}` : `Now Playing${sortingReference[sortBy]}`
     }
 
 
