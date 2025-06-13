@@ -10,10 +10,6 @@ main {
         /* TODO Stretch: Make sticky navbar */
         position: sticky;
     }
-
-    .primary {
-        min-width: 94%;
-    }
     
     border-bottom: 1px solid black;
 }   
