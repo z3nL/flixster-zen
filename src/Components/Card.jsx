@@ -30,7 +30,7 @@ const Card =
         fetch(`https://api.themoviedb.org/3/movie/${movieID}?language=en-US`, optionsForFetch)
             .then(res => res.json())
             .then((info) => {
-                info.runtime = `${parseInt(info.runtime/60)} hr ${parseInt(info.runtime)%60} min`
+                info.runtime = `${info.runtime} min`
                 info.genres = info.genres.map((genre) => genre.name).join(", ");
                 setMovieDetails(info);
             })
